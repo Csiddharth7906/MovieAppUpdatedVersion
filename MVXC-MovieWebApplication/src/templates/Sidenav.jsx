@@ -39,7 +39,7 @@ const Sidenav = () => {
       `}>
       {/* Logo */}
       <h1 className="text-2xl text-white font-bold flex items-center mb-3">
-        <i className="text-[#D2042D] ri-tv-fill mr-2 text-2xl"></i>
+        <img src="/mvxclogo.jpg" alt="MVXC Logo" className="h-8 w-8 rounded-full object-cover mr-2" />
         MVXC
       </h1>
 
