@@ -21,12 +21,12 @@ const Favorites = () => {
   };
 
   return (
-    <div className="w-screen h-screen bg-[#1F1E24] flex">
+    <div className="w-full min-h-screen bg-[#1F1E24] flex flex-col lg:flex-row">
       <Sidenav />
-      <div className="w-[80%] h-full overflow-auto">
+      <div className="flex-1 w-full lg:w-[80%] h-full overflow-auto">
         <Topnav />
         
-        <div className="p-8">
+        <div className="p-4 sm:p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="mb-8">
@@ -35,15 +35,15 @@ const Favorites = () => {
             </div>
 
             {/* Stats */}
-            <div className="bg-[#2A2930] rounded-lg p-6 mb-6">
-              <div className="flex items-center justify-between">
+            <div className="bg-[#2A2930] rounded-lg p-4 sm:p-6 mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h2 className="text-xl font-semibold text-white">Favorites Summary</h2>
                   <p className="text-zinc-400 mt-1">
                     {favoriteItems.length} items in your favorites
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 justify-center sm:justify-start">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-[#D2042D]">
                       {favoriteItems.filter(item => item.media_type === 'movie').length}
@@ -66,7 +66,7 @@ const Favorites = () => {
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D2042D]"></div>
               </div>
             ) : favoriteItems.length === 0 ? (
-              <div className="bg-[#2A2930] rounded-lg p-12 text-center">
+              <div className="bg-[#2A2930] rounded-lg p-6 sm:p-12 text-center">
                 <div className="w-24 h-24 bg-[#D2042D] rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-heart-line text-white text-3xl"></i>
                 </div>
@@ -83,14 +83,14 @@ const Favorites = () => {
                 </Link>
               </div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
                 {favoriteItems.map((item) => (
-                  <div key={item.id} className="bg-[#2A2930] rounded-lg overflow-hidden group hover:scale-105 transition duration-300">
+                  <div key={item.id} className="bg-[#2A2930] rounded-lg overflow-hidden group hover:scale-105 transition duration-300 w-full">
                     <div className="relative">
                       <img
                         src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                         alt={item.title || item.name}
-                        className="w-full h-80 object-cover"
+                        className="w-full h-48 sm:h-64 md:h-80 object-cover"
                       />
                       <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition duration-300">
                         <button

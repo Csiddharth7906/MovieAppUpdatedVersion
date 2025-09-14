@@ -32,12 +32,12 @@ const Profile = () => {
   };
 
   return (
-    <div className="w-screen h-screen bg-[#1F1E24] flex">
+    <div className="w-full min-h-screen bg-[#1F1E24] flex flex-col lg:flex-row">
       <Sidenav />
-      <div className="w-[80%] h-full overflow-auto">
+      <div className="flex-1 w-full lg:w-[80%] h-full overflow-auto">
         <Topnav />
         
-        <div className="p-8">
+        <div className="p-4 sm:p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="mb-8">
@@ -47,7 +47,7 @@ const Profile = () => {
 
             {/* Profile Card */}
             <div className="bg-[#2A2930] rounded-lg p-6 mb-6">
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
                 <h2 className="text-xl font-semibold text-white">Profile Information</h2>
                 {!isEditing ? (
                   <button
@@ -58,7 +58,7 @@ const Profile = () => {
                     Edit Profile
                   </button>
                 ) : (
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <button
                       onClick={handleSave}
                       className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-200"
@@ -77,13 +77,13 @@ const Profile = () => {
                 )}
               </div>
 
-              <div className="flex items-center mb-6">
-                <div className="w-20 h-20 bg-[#D2042D] rounded-full flex items-center justify-center mr-6">
+              <div className="flex flex-col sm:flex-row items-center mb-6 gap-4">
+                <div className="w-20 h-20 bg-[#D2042D] rounded-full flex items-center justify-center sm:mr-6">
                   <span className="text-white font-bold text-2xl">
                     {user?.name?.charAt(0)?.toUpperCase() || 'U'}
                   </span>
                 </div>
-                <div>
+                <div className="text-center sm:text-left">
                   <h3 className="text-xl font-semibold text-white">{user?.name}</h3>
                   <p className="text-zinc-400">{user?.email}</p>
                   <p className="text-sm text-zinc-500">Member since {new Date().getFullYear()}</p>
@@ -173,7 +173,7 @@ const Profile = () => {
             {/* Account Actions */}
             <div className="bg-[#2A2930] rounded-lg p-6">
               <h2 className="text-xl font-semibold text-white mb-4">Account Actions</h2>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <button className="bg-zinc-600 hover:bg-zinc-700 text-white px-4 py-2 rounded-lg transition duration-200">
                   <i className="ri-lock-line mr-2"></i>
                   Change Password

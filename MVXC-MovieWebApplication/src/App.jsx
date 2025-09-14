@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
+import Landing from "./components/Landing";
 import Trending from "./components/Trending";
 import Popular from "./components/Popular";
 import Movie from "./components/Movie";
@@ -23,9 +24,10 @@ const App = () => {
   return (
     <AuthProvider>
       <MobileProvider>
-        <div className="bg-[#1F1E24]  flex w-screen h-screen    ">
+        <div className="bg-[#1F1E24] w-full min-h-screen">
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Landing />}/>
+          <Route path="/home" element={<Home />}/>
           <Route path="/trending" element={<Trending />}/>
           <Route path="/popular" element={<Popular />} />
           <Route path="/movie" element={<Movie />} />
