@@ -55,7 +55,7 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
-              <img src="/mvxclogo.jpg" alt="MVXC Logo" className="h-8 w-8 rounded-full object-cover" />
+              <i className="ri-tv-fill text-3xl text-[#D2042D]"></i>
               <span className="text-2xl font-bold bg-gradient-to-r from-[#D2042D] to-red-400 bg-clip-text text-transparent">
                 MVXC
               </span>
@@ -283,7 +283,7 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <img src="/mvxclogo.jpg" alt="MVXC Logo" className="h-6 w-6 rounded-full object-cover" />
+              <i className="ri-tv-fill text-2xl text-[#D2042D]"></i>
               <span className="text-xl font-bold bg-gradient-to-r from-[#D2042D] to-red-400 bg-clip-text text-transparent">
                 MVXC
               </span>
