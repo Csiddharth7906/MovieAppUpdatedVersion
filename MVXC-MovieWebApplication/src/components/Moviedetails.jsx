@@ -37,7 +37,7 @@ const { id } = useParams();
 
   const checkWatchlistStatus = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/watchlist`);
+      const response = await axios.get(`https://mvxc-movie-backend.onrender.com/api/auth/watchlist`);
       const isInList = response.data.some(item => item.id === parseInt(id) && item.media_type === 'movie');
       setIsInWatchlist(isInList);
     } catch (error) {
@@ -47,7 +47,7 @@ const { id } = useParams();
 
   const checkFavoritesStatus = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/favorites`);
+      const response = await axios.get(`https://mvxc-movie-backend.onrender.com/api/auth/favorites`);
       const isInList = response.data.some(item => item.id === parseInt(id) && item.media_type === 'movie');
       setIsInFavorites(isInList);
     } catch (error) {
@@ -73,10 +73,10 @@ const { id } = useParams();
       };
 
       if (isInWatchlist) {
-        await axios.delete(`http://localhost:5000/api/auth/watchlist/${id}`);
+        const response = await axios.delete('https://mvxc-movie-backend.onrender.com/api/auth/watchlist', { data: { id: parseInt(id) } });
         setIsInWatchlist(false);
       } else {
-        await axios.post(`http://localhost:5000/api/auth/watchlist`, movieData);
+        const response = await axios.post('https://mvxc-movie-backend.onrender.com/api/auth/watchlist', movieData);
         setIsInWatchlist(true);
       }
     } catch (error) {
@@ -104,10 +104,10 @@ const { id } = useParams();
       };
 
       if (isInFavorites) {
-        await axios.delete(`http://localhost:5000/api/auth/favorites/${id}`);
+        const response = await axios.delete('https://mvxc-movie-backend.onrender.com/api/auth/favorites', { data: { id: parseInt(id) } });
         setIsInFavorites(false);
       } else {
-        await axios.post(`http://localhost:5000/api/auth/favorites`, movieData);
+        const response = await axios.post('https://mvxc-movie-backend.onrender.com/api/auth/favorites', movieData);
         setIsInFavorites(true);
       }
     } catch (error) {
