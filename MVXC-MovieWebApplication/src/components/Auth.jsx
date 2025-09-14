@@ -38,7 +38,7 @@ const Auth = () => {
         });
         
         login(response.data.user, response.data.token);
-        navigate('/');
+        navigate('/home');
       } else {
         // Signup logic
         if (formData.password !== formData.confirmPassword) {
@@ -54,7 +54,7 @@ const Auth = () => {
         });
         
         login(response.data.user, response.data.token);
-        navigate('/');
+        navigate('/home');
       }
     } catch (error) {
       setError(error.response?.data?.message || 'An error occurred');

@@ -110,7 +110,7 @@ const Landing = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
-              to="/auth"
+              to="/home"
               className="bg-gradient-to-r from-[#D2042D] to-red-600 px-8 py-4 rounded-full text-lg font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 shadow-2xl"
             >
               <i className="ri-play-fill mr-2"></i>
@@ -268,7 +268,7 @@ const Landing = () => {
               Sign Up Free
             </Link>
             <Link 
-              to="/trending"
+              to="/home"
               className="border-2 border-white/30 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
             >
               <i className="ri-eye-line mr-2"></i>
