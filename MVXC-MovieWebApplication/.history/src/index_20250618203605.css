@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* primary - #1F1E24
+secondry - #D2042D */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* for horizontal overflow */
+  overflow-y: auto; /* or hidden if you don't want scroll */
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #161618;
+  border-radius: 40px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #161618;
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6556cd;
+  border-radius: 40px;
+}
+
+.select {
+  position: relative;
+  width: 14em;
+  height: 2.5em;
+  background: #27272a;
+  border-radius: 0.3em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.95em;
+}
+
+.select::after {
+  content: "▼";
+  position: absolute;
+  right: 1em;
+  pointer-events: none;
+  color: #ccc;
+  transition: 0.2s ease;
+}
+
+.select:hover::after {
+  color: #6556cd;
+}
+
+.select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: #27272a;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* For Firefox only – dark option list */
+select option {
+  background: #1f1f22;
+  color: #fff;
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.animate-spin-reverse {
+  animation: spin-reverse 1s linear infinite;
+}
